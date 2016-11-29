@@ -30,8 +30,8 @@ header, nav, main, aside, footer {
 }
 
 header {
-     .textProperties(@darkColor; 2em; bold; "Open Sans", Helvetica, Arial, sans-serif; 1.75em;);
-     background-color: @color5;
+     .textProperties(@darkColor; 1.5em; bold; "Open Sans", Helvetica, Arial, sans-serif; 1.75em;);
+     background-color: @color4;
      text-align: center;
      letter-spacing: 2px;
      border-bottom: 2px solid @darkColor;
@@ -67,7 +67,7 @@ nav, footer {
 
           a {
                text-decoration: none;
-               .textProperties(@color4; 1.5em; normal; Georgia, Helvetica, Arial, san-serif; 1em;);
+               .textProperties(@color4; 1.5em; bold; Georgia, Helvetica, Arial, san-serif; 1em;);
           }
      }
      &:last-of-type {
@@ -76,11 +76,12 @@ nav, footer {
 }
 
 main {
-     .textProperties(@darkColor; 1.25em; normal; "Open Sans", Helvetica, Arial, sans-serif; 1.1em;);
+     .textProperties(@darkColor; 1em; normal; "Open Sans", Helvetica, Arial, sans-serif; 1.5em;);
 }
 
 aside {
-
+     background-color: @color4;
+     border-bottom: 2px solid @darkColor;
 }
 
 footer {
@@ -88,6 +89,7 @@ footer {
 
      h2 {
           padding-left: 1em;
+          color: @color4;
      }
      li:first-of-type {
           border-top: 2px solid @darkColor;
@@ -129,8 +131,9 @@ li {
 }
 
 figure {
-     background-color: @color4;
+     background-color: @color2;
      border: 1px solid @darkColor;
+     border-radius: 1em;
 
      figcaption {
           padding-left: 1em;

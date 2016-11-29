@@ -54,11 +54,11 @@ footer {
 }
 header {
   color: #040004;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.75em;
-  background-color: #8fbe00;
+  background-color: #aee239;
   text-align: center;
   letter-spacing: 2px;
   border-bottom: 2px solid #040004;
@@ -99,7 +99,7 @@ footer li a {
   text-decoration: none;
   color: #aee239;
   font-size: 1.5em;
-  font-weight: normal;
+  font-weight: bold;
   font-family: Georgia, Helvetica, Arial, san-serif;
   line-height: 1em;
 }
@@ -109,16 +109,21 @@ footer:last-of-type {
 }
 main {
   color: #040004;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: normal;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.1em;
+  line-height: 1.5em;
+}
+aside {
+  background-color: #aee239;
+  border-bottom: 2px solid #040004;
 }
 footer {
   border-top: 2px solid #040004;
 }
 footer h2 {
   padding-left: 1em;
+  color: #aee239;
 }
 footer li:first-of-type {
   border-top: 2px solid #040004;
@@ -192,8 +197,9 @@ li {
   line-height: 1.5em;
 }
 figure {
-  background-color: #aee239;
+  background-color: #40c0cb;
   border: 1px solid #040004;
+  border-radius: 1em;
 }
 figure figcaption {
   padding-left: 1em;
