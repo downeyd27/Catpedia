@@ -8,7 +8,7 @@ Programmer: Dillon Downey
 
 /* Parametric mixins for font attributes*/
 
-.headerFontAttributes(@fontColor; @fontSize) {
+.headerFontAttributes(@fontColor; @fontSize;) {
     color: @fontColor;
     font-size: @fontSize;
     font-weight: bold;
@@ -19,7 +19,7 @@ Programmer: Dillon Downey
     text-transform: uppercase;
 }
 
-.textAttributes(@fontColor, @fontSize, @fontWeight, @fontFamily, @fontLineHeight) {
+.textProperties(@fontColor; @fontSize; @fontWeight; @fontFamily; @fontLineHeight;) {
     color: @fontColor;
     font-size: @fontSize;
     font-weight: @fontWeight;
@@ -29,7 +29,7 @@ Programmer: Dillon Downey
 
 /* Parametric mixins for box properties */
 
-.boxProperties(@borderRadius, @boxShadow, @color) {
+.boxProperties(@borderRadius; @boxShadow; @color;) {
     border-radius: @borderRadius;
     box-shadow: @boxShadow @boxShadow @color;
     color: @color;

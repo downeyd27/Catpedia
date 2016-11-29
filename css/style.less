@@ -1,11 +1,8 @@
 /*
 File Name: style.less
-Date: 11/20/16
+Date: 11/28/16
 Programmer: Dillon Downey
 */
-
-@import 'palette.less';
-@import 'mixins.less';
 
 /*
 
@@ -13,8 +10,9 @@ This file contains the main stylesheet for this project.
 
 */
 
-
-
+@import 'palette.less'; // Import palettes 1st so following stylesheets have access
+@import url('https://fonts.googleapis.com/css?family=Open+Sans'); // Import 2nd so following stylesheets have access
+@import 'mixins.less'; // Import 3rd so following stylesheets have access
 
 /*
 
@@ -23,19 +21,62 @@ MOBILE STYLESHEET
 */
 
 body {
+     background-color: @color3;
+     .textProperties(@darkColor; 16px; normal; "Open Sans", Helvetica, Arial, sans-serif; 1.75em;);
+}
 
+header, nav, main, aside, footer {
+     padding: 1em;
 }
 
 header {
+     .textProperties(@darkColor; 2em; bold; "Open Sans", Helvetica, Arial, sans-serif; 1.75em;);
+     background-color: @color5;
+     text-align: center;
+     letter-spacing: 2px;
+     border-bottom: 2px solid @darkColor;
 
+     h1 {
+          margin: 0;
+     }
 }
 
 nav {
+     border-bottom: 2px solid @darkColor;
+}
 
+nav, footer {
+     padding: 0;
+     background-color: @color1;
+     letter-spacing: 1px;
+
+     h2 {
+          .textProperties(@color5; 1.5em; bold; "Open Sans", Helvetica, Arial, sans-serif; 1em;);
+     }
+
+     ul {
+          padding: 0;
+     }
+
+     li {
+          list-style-type: none;
+          text-align: center;
+          padding: 1em;
+          border-bottom: 2px solid @darkColor;
+
+
+          a {
+               text-decoration: none;
+               .textProperties(@color4; 1.5em; normal; Georgia, Helvetica, Arial, san-serif; 1em;);
+          }
+     }
+     &:last-of-type {
+          border-bottom: none;
+     }
 }
 
 main {
-
+     .textProperties(@darkColor; 1.25em; normal; "Open Sans", Helvetica, Arial, sans-serif; 1.1em;);
 }
 
 aside {
@@ -43,38 +84,44 @@ aside {
 }
 
 footer {
+     border-top: 2px solid @darkColor;
 
+     h2 {
+          padding-left: 1em;
+     }
+     li:first-of-type {
+          border-top: 2px solid @darkColor;
+     }
 }
 
 h1 {
-     .headerFontAttributes(black; 1.8em);
+     .headerFontAttributes(@darkColor; 1.8em);
 }
 
 h2 {
-     .headerFontAttributes(black; 1.4em);
+     .headerFontAttributes(@darkColor; 1.4em);
 }
 
 h3 {
-     .headerFontAttributes(black; 1.1em);
+     .headerFontAttributes(@darkColor; 1.1em);
 }
 
 h4 {
-     .headerFontAttributes(black; .9em);
+     .headerFontAttributes(@darkColor; .9em);
 }
 
 h5 {
-     .headerFontAttributes(black; .85em);
+     .headerFontAttributes(@darkColor; .85em);
 }
 
 h6 {
-     .headerFontAttributes(black; .75em);
+     .headerFontAttributes(@darkColor; .75em);
 }
 
 ul {
      list-style-type: disc;
      list-style-position: inside;
      padding-left: 1em;
-
 }
 
 li {
@@ -82,20 +129,24 @@ li {
 }
 
 figure {
-     border: 1px solid black;
+     background-color: @color4;
+     border: 1px solid @darkColor;
 
      figcaption {
           padding-left: 1em;
+          padding-top: .25em;
+          padding-bottom: .25em;
      }
 }
 
 img {
      padding: 1em;
+     padding-bottom: 0;
 }
 
 p {
-     margin-left: .25em;
-     margin-right: .25em;
+     margin-left: .5em;
+     margin-right: .5em;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -103,9 +154,6 @@ p, h1, h2, h3, h4, h5, h6 {
      margin-bottom: 1em;
 }
 
-header, nav, main, aside, footer {
-     padding: 1em;
-}
 
 
 
