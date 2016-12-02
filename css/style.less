@@ -1,6 +1,6 @@
 /*
 File Name: style.less
-Date: 11/28/16
+Date: 12/02/16
 Programmer: Dillon Downey
 */
 
@@ -70,9 +70,9 @@ nav, footer {
                .textProperties(@color4; 1.5em; bold; Georgia, Helvetica, Arial, san-serif; 1em;);
           }
      }
-     &:last-of-type {
-          border-bottom: none;
-     }
+//     &:last-of-type {
+//          border-bottom: none;
+//     }
 }
 
 main {
@@ -90,9 +90,6 @@ footer {
      h2 {
           padding-left: 1em;
           color: @color4;
-     }
-     li:first-of-type {
-          border-top: 2px solid @darkColor;
      }
 }
 
@@ -163,12 +160,37 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /*
 
-TABLET STYLESHEET
+TABLET IN PORTRAIT STYLESHEET
 
 */
 
 @media screen and (min-width: 481px) {
+     body {
+          font-size: 18px;
+     }
 
+     aside, main, footer h2 {
+          padding-left: 1.75em;
+          padding-right: 1.75em;
+     }
+
+     figure {
+          max-width: 500px;
+     }
+
+     nav, footer {
+
+          ul {
+               display: inline-flex;
+               width: 100%;
+               justify-content: space-between;
+//               border-bottom: 0 solid black;
+
+               li {
+                    border-bottom: none;
+               }
+          }
+     }
 }
 
 
@@ -185,5 +207,12 @@ DESKTOP STYLESHEET
 */
 
 @media screen and (min-width: 1025px) {
+     body {
+          font-size: 20px;
+     }
 
+     aside, main, footer h2 {
+          padding-left: 1.75em;
+          padding-right: 1.75em;
+     }
 }
