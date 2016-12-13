@@ -1,6 +1,6 @@
 /*
 File Name: style.less
-Date: 12/02/16
+Date: 12/12/16
 Programmer: Dillon Downey
 */
 
@@ -12,7 +12,8 @@ This file contains the main stylesheet for this project.
 
 @import 'palette.less'; // Import palettes 1st so following stylesheets have access
 @import url('https://fonts.googleapis.com/css?family=Open+Sans'); // Import 2nd so following stylesheets have access
-@import 'mixins.less'; // Import 3rd so following stylesheets have access
+@import 'elements.less'; // Import 3rd so following stylesheets have access
+@import 'mixins.less'; // Import 4th so following stylesheets have access
 
 /*
 
@@ -62,7 +63,7 @@ nav, footer {
           list-style-type: none;
           text-align: center;
           padding: 1em;
-          border-bottom: 2px solid @darkColor;
+          border-bottom: 1px solid @darkColor;
 
 
           a {
@@ -70,9 +71,6 @@ nav, footer {
                .textProperties(@color4; 1.5em; bold; Georgia, Helvetica, Arial, san-serif; 1em;);
           }
      }
-//     &:last-of-type {
-//          border-bottom: none;
-//     }
 }
 
 main {
@@ -81,7 +79,17 @@ main {
 
 aside {
      background-color: @color4;
-     border-bottom: 2px solid @darkColor;
+
+     .scientific_classification {
+          display: flex;
+          justify-content: space-between;
+
+         li {
+             .textProperties(@darkColor; 1em; bold; monospace; 1.5em;)
+         }
+     }
+
+     .gradient(@color1; @color1; @color4;);
 }
 
 footer {
@@ -90,6 +98,10 @@ footer {
      h2 {
           padding-left: 1em;
           color: @color4;
+     }
+
+     li:first-of-type {
+          border-top: 1px solid @darkColor;
      }
 }
 
@@ -117,12 +129,6 @@ h6 {
      .headerFontAttributes(@darkColor; .75em);
 }
 
-ul {
-     list-style-type: disc;
-     list-style-position: inside;
-     padding-left: 1em;
-}
-
 li {
      line-height: 1.5em;
 }
@@ -130,18 +136,17 @@ li {
 figure {
      background-color: @color2;
      border: 1px solid @darkColor;
-     border-radius: 1em;
 
      figcaption {
           padding-left: 1em;
           padding-top: .25em;
           padding-bottom: .25em;
      }
-}
 
-img {
-     padding: 1em;
-     padding-bottom: 0;
+     img {
+          padding: 1em;
+          padding-bottom: 0;
+     }
 }
 
 p {
@@ -155,7 +160,46 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+/*
 
+SPECIFIC PAGE CSS
+
+*/
+
+
+/* Home Page */
+
+#home_page {
+     .home_link {
+          background-color: @lightColor;
+     }
+}
+
+/* Gallery Page */
+
+#gallery_page {
+     .gallery_link {
+          background-color: @lightColor;
+     }
+
+     main {
+          img {
+               padding: 1em;
+               background-color: @color2;
+               .bordered();
+               .rounded();
+               .drop-shadow();
+          }
+     }
+}
+
+/* Taxonomy Page */
+
+#taxonomy_page {
+     .taxonomy_link {
+          background-color: @lightColor;
+     }
+}
 
 
 /*
@@ -167,6 +211,10 @@ TABLET IN PORTRAIT STYLESHEET
 @media screen and (min-width: 481px) {
      body {
           font-size: 18px;
+     }
+
+     aside {
+          border-left: 2px solid @darkColor;
      }
 
      aside, main, footer h2 {
@@ -184,21 +232,28 @@ TABLET IN PORTRAIT STYLESHEET
                display: inline-flex;
                width: 100%;
                justify-content: space-between;
-//               border-bottom: 0 solid black;
 
-               li {
-                    border-bottom: none;
+               li, li:first-of-type {
+                    border: none;
                }
           }
      }
 }
 
+/*
 
+TABLET IN LANDSCAPE MODE
 
+*/
 
-
-
-
+@media screen and(min-width: 767px) {
+     main {
+          width: 80%;
+     }
+     .main_and_aside_section {
+          display: inline-flex;
+     }
+}
 
 /*
 
@@ -210,6 +265,14 @@ DESKTOP STYLESHEET
      body {
           font-size: 20px;
      }
+
+    main {
+          width: 80%;
+    }
+
+    .main_and_aside_section {
+        display: inline-flex;
+    }
 
      aside, main, footer h2 {
           padding-left: 1.75em;
