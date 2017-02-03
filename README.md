@@ -13,7 +13,3 @@ Wikipedia style website designed and developed with CSS best practices in mind.
 ## Known Bug
 
 Brackets.io has a bug where it generates a .css stylesheet for every .less file even with "// out: null" stated at the top of the file.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
